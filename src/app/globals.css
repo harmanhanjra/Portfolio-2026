@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", "Geist", system-ui, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", monospace;
+}
+
+:root {
+  --lab-bg: #05070d;
+  --lab-ink: #f2efe9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--lab-bg);
+  color: var(--lab-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+}
+
+/* visible focus for keyboard users */
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  background: #38bdf8;
+  color: #05070d;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* blueprint grid backdrop */
+.lab-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 30%, transparent 75%);
+}
+
+/* artifact cards */
+.lab-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+@media (pointer: fine) {
+  .lab-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 18px 50px -20px rgba(56, 189, 248, 0.25);
+  }
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: #38bdf8;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.constellation-chip {
+  animation: chip-in 0.5s ease both;
+}
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Recruiter mode: calm, fast, dense ─────────────────── */
+body.recruiter .lab-grid,
+body.recruiter .constellation-chip {
+  animation: none;
+}
+body.recruiter .lab-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Reduced motion ────────────────────────────────────── */
+body.motion-off *,
+body.motion-off *::before,
+body.motion-off *::after {
+  animation-duration: 0.001s !important;
+  transition-duration: 0.001s !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+/* ── Print (resume page) ───────────────────────────────── */
+@media print {
+  body {
+    background: #fff;
+    color: #111;
+  }
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
