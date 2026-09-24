@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     solution:
       "Per-agent model routing, streaming responses over SSE, search grounding with citations, and an embedding-backed memory API layer.",
     outcome: "Deployable to Vercel in under 2 minutes with zero required config.",
-    github: "https://github.com/harmanhanjra/NEXUS-AI",
+    github: "https://github.com/harmanhanjra/NEXUS-AI-The-Next-Generation-AI-Agent-Operating-System",
     featured: true,
   },
   {

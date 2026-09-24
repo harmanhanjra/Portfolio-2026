@@ -78,7 +78,7 @@ export function CaseStudies() {
           <Reveal delay={0.08}>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="https://github.com/harmanhanjra/NEXUS-AI"
+                href="https://github.com/harmanhanjra/NEXUS-AI-The-Next-Generation-AI-Agent-Operating-System"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("github_click", "nexus-ai")}
