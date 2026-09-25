@@ -45,18 +45,18 @@ export function CustomCursor() {
       style={{ transform: `translate(${pos.x}px, ${pos.y}px)` }}
     >
       <div
-        className={`flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-all duration-150 ${
-          label
-            ? "h-16 w-16 border-sky-400/70 bg-sky-400/10 backdrop-blur-sm"
-            : active
-              ? "h-10 w-10 border-white/40 bg-white/5"
-              : "h-5 w-5 border-white/30"
-        }`}
+         className={`flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border transition-transform duration-150 ${
+           label
+             ? "scale-[3.2] border-[#d8ff63]/70 bg-[#d8ff63]/10 backdrop-blur-sm"
+             : active
+               ? "scale-2 border-white/40 bg-white/5"
+               : "scale-100 border-white/30"
+         }`}
       >
         {label ? (
-          <span className="text-[9px] font-bold tracking-[0.18em] text-sky-300">{label}</span>
+           <span className="text-[9px] font-bold tracking-[0.18em] text-[#d8ff63]">{label}</span>
         ) : (
-          <span className={`rounded-full bg-sky-400 ${active ? "h-1 w-1" : "h-1.5 w-1.5"}`} />
+           <span className={`rounded-full bg-[#d8ff63] ${active ? "h-1 w-1" : "h-1.5 w-1.5"}`} />
         )}
       </div>
     </div>
@@ -78,8 +78,8 @@ export function ScrollProgress() {
   return (
     <div className="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent" aria-hidden>
       <div
-        className="h-full bg-gradient-to-r from-sky-400 via-violet-500 to-cyan-300"
-        style={{ width: `${p * 100}%` }}
+         className="h-full origin-left bg-[#d8ff63]"
+         style={{ transform: `scaleX(${p})` }}
       />
     </div>
   );

@@ -1,37 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist_Mono, Instrument_Serif, Manrope } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/navbar";
-import { CustomCursor, ScrollProgress } from "@/components/chrome";
-import { CommandPalette } from "@/components/palette";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const display = Space_Grotesk({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "700"] });
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"] });
+const editorial = Instrument_Serif({
+  variable: "--font-editorial",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const SITE = "https://harmanpreet-singh-lab.vercel.app"; // TODO: replace with final domain
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://harmanpreet-singh-lab.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Harmanpreet Singh — AI Engineer · Generative AI · Agentic Systems",
+    default: "Harmanpreet Singh — AI Engineer",
     template: "%s · Harmanpreet Singh",
   },
   description:
-    "AI Engineer building intelligent systems that actually work. Generative AI, LLM systems, agentic workflows, RAG pipelines, and full-stack delivery — Berlin / remote worldwide.",
+    "AI engineer building reliable agent systems, RAG pipelines, and production-ready full-stack applications. Based in Berlin, open to remote roles across Europe.",
   keywords: [
     "Harmanpreet Singh",
     "AI Engineer",
     "Generative AI Engineer",
     "LLM Engineer",
-    "Agentic AI Engineer",
-    "AI Automation Developer",
-    "Full Stack Developer",
+    "Agentic AI",
+    "RAG Engineer",
     "Python Developer",
-    "RAG",
-    "LangChain",
-    "Next.js",
+    "Next.js Developer",
+    "Berlin",
   ],
   authors: [{ name: "Harmanpreet Singh" }],
   creator: "Harmanpreet Singh",
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE,
     title: "Harmanpreet Singh — AI Engineer",
-    description: "Generative AI · Agentic Systems · Full Stack. 95%+ agent task completion. Explore the lab.",
-    siteName: "HS.LAB",
+    description: "Agent systems, RAG pipelines, and production-ready AI applications.",
+    siteName: "Harmanpreet Singh",
   },
   twitter: {
     card: "summary_large_image",
     title: "Harmanpreet Singh — AI Engineer",
-    description: "Generative AI · Agentic Systems · Full Stack",
+    description: "Agent systems, RAG pipelines, and production-ready AI applications.",
   },
   robots: { index: true, follow: true },
 };
@@ -57,16 +57,16 @@ const personJsonLd = {
   name: "Harmanpreet Singh",
   jobTitle: "AI Engineer",
   description:
-    "AI Engineer focused on Generative AI, LLM systems, agentic workflows, and full-stack delivery.",
+    "AI engineer specializing in agent systems, RAG pipelines, evaluation, and full-stack delivery.",
   address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
   email: "mailto:2000sharmanpreet@gmail.com",
   url: SITE,
   sameAs: ["https://github.com/harmanhanjra"],
   knowsAbout: [
     "Generative AI",
-    "LLM Systems",
-    "Agentic Workflows",
+    "Agent Systems",
     "RAG Pipelines",
+    "LLM Evaluation",
     "LangChain",
     "LlamaIndex",
     "Next.js",
@@ -77,13 +77,13 @@ const personJsonLd = {
 const siteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Harmanpreet Singh — AI Systems Lab",
+  name: "Harmanpreet Singh — AI Engineer",
   url: SITE,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${geistSans.variable} ${geistMono.variable} ${display.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${editorial.variable} ${mono.variable}`}>
       <body className="min-h-full antialiased">
         <script
           type="application/ld+json"
@@ -93,13 +93,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
         />
-        <Providers>
-          <ScrollProgress />
-          <CustomCursor />
-          <Navbar />
-          {children}
-          <CommandPalette />
-        </Providers>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

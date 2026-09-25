@@ -28,7 +28,7 @@ const PILLARS = [
 export function About() {
   return (
     <section id="about" aria-label="About Harmanpreet" className="relative">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+       <div className="mx-auto max-w-7xl px-5 py-16 md:py-24">
         <SectionHead
           index="03"
           code="ABOUT // OPERATOR"
@@ -38,8 +38,8 @@ export function About() {
         <div className="grid gap-4 sm:grid-cols-2">
           {PILLARS.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.06}>
-              <article className="lab-card h-full rounded-2xl p-6 md:p-7">
-                <p.icon size={22} className="text-sky-400" aria-hidden />
+              <article className="lab-card h-full rounded-[1.25rem] p-6 md:p-7">
+                 <p.icon size={22} className="text-[#d8ff63]" aria-hidden />
                 <h3 className="font-display mt-4 text-lg font-bold text-white">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{p.text}</p>
               </article>
@@ -47,7 +47,7 @@ export function About() {
           ))}
         </div>
         <Reveal delay={0.1}>
-          <p className="mt-8 max-w-3xl border-l-2 border-sky-400/60 pl-5 text-[15px] leading-relaxed text-slate-300">
+             <p className="mt-8 max-w-3xl border-l border-[#d8ff63]/60 pl-5 text-[15px] leading-relaxed text-slate-300">
             Founder of <strong className="text-white">Harman AI Labs</strong> (AI automation for
             SMBs) and <strong className="text-white">QuantPunjab</strong> (algorithmic trading
             systems). {PROFILE.workAuthorization}.

@@ -36,9 +36,9 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
   }, [value, calm]);
 
   return (
-    <span ref={ref} className="font-display text-4xl font-bold text-white md:text-5xl">
+    <span ref={ref} className="font-display text-4xl font-bold tracking-[-0.05em] text-white md:text-5xl">
       {n}
-      <span className="text-sky-400">{suffix}</span>
+       <span className="text-[#d8ff63]">{suffix}</span>
     </span>
   );
 }
@@ -46,14 +46,14 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 export function Impact() {
   return (
     <section id="impact" aria-label="Measured impact" className="relative border-y border-white/10 bg-white/[0.015]">
-      <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
+      <div className="mx-auto max-w-7xl px-5 py-14 md:py-20">
         <Reveal>
           <Eyebrow index="02" code="PROOF // VERIFIED IMPACT" />
           <p className="mt-3 max-w-2xl text-sm text-slate-500">
             Every number below comes straight from shipped work — no vanity metrics.
           </p>
         </Reveal>
-        <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4">
+        <dl className="proof-panel mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/10 lg:grid-cols-4">
           {IMPACT.map((m, i) => (
             <Reveal key={m.label} delay={i * 0.06} className="bg-[#070b14]">
               <div className="flex h-full flex-col gap-2 p-6 md:p-8">

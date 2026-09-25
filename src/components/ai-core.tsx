@@ -16,13 +16,13 @@ export interface CoreNode {
 }
 
 export const CORE_NODES: CoreNode[] = [
-  { id: "llm", label: "LLM", section: "#skills", blurb: "OpenAI · Anthropic · Gemini · Hugging Face — production LLM integrations.", color: "#38bdf8" },
+  { id: "llm", label: "LLM", section: "#skills", blurb: "OpenAI · Anthropic · Gemini · Hugging Face — production LLM integrations.", color: "#d8ff63" },
   { id: "rag", label: "RAG", section: "#case-docqa", blurb: "LlamaIndex pipelines + Pinecone vector search over complex documents.", color: "#22d3ee" },
   { id: "agents", label: "Agents", section: "#case-nexus", blurb: "CrewAI + LangChain multi-agent systems with model routing & memory.", color: "#a78bfa" },
   { id: "automation", label: "Automation", section: "#automation", blurb: "n8n + Zapier + LLM pipelines running real business workflows.", color: "#34d399" },
   { id: "apis", label: "APIs", section: "#fullstack", blurb: "Node.js · Express · Flask · GraphQL — secure, OWASP-aligned backends.", color: "#f472b6" },
   { id: "fullstack", label: "Full Stack", section: "#fullstack", blurb: "React · Next.js · TypeScript — 10+ shipped apps, 4+ years.", color: "#fbbf24" },
-  { id: "cloud", label: "Cloud", section: "#experience", blurb: "AWS Certified · Docker · CI/CD — from code to production.", color: "#60a5fa" },
+  { id: "cloud", label: "Cloud", section: "#experience", blurb: "AWS Certified · Docker · CI/CD — from code to production.", color: "#d8ff63" },
   { id: "security", label: "Security", section: "#education", blurb: "MSc Cybersecurity — AI/agent security & adversarial robustness.", color: "#f87171" },
 ];
 
@@ -30,7 +30,7 @@ const RADIUS = 4.3;
 
 // Shared line material (module singleton — no per-render allocation).
 const lineMaterial = new THREE.LineBasicMaterial({
-  color: "#38bdf8",
+  color: "#d8ff63",
   transparent: true,
   opacity: 0.28,
 });
@@ -65,17 +65,17 @@ function Core() {
     <group>
       <mesh ref={core}>
         <icosahedronGeometry args={[1.35, 1]} />
-        <meshStandardMaterial color="#0b1526" emissive="#1d4ed8" emissiveIntensity={0.55} roughness={0.3} metalness={0.7} flatShading />
+        <meshStandardMaterial color="#10180e" emissive="#38561a" emissiveIntensity={0.55} roughness={0.3} metalness={0.7} flatShading />
       </mesh>
       <mesh ref={shell} scale={1.9}>
         <icosahedronGeometry args={[1.35, 1]} />
-        <meshBasicMaterial color="#38bdf8" wireframe transparent opacity={0.14} />
+        <meshBasicMaterial color="#d8ff63" wireframe transparent opacity={0.14} />
       </mesh>
       <mesh scale={2.7}>
         <sphereGeometry args={[1.35, 32, 32]} />
-        <meshBasicMaterial color="#38bdf8" transparent opacity={0.04} side={THREE.BackSide} />
+        <meshBasicMaterial color="#d8ff63" transparent opacity={0.04} side={THREE.BackSide} />
       </mesh>
-      <pointLight intensity={30} distance={20} color="#60a5fa" />
+      <pointLight intensity={30} distance={20} color="#d8ff63" />
     </group>
   );
 }
@@ -152,7 +152,7 @@ function NodeField({
             >
               <sphereGeometry args={[isActive ? 0.34 : 0.24, 24, 24]} />
               <meshStandardMaterial
-                color="#05070d"
+                color="#0b0e0d"
                 emissive={n.color}
                 emissiveIntensity={isActive ? 2.4 : 1.1}
                 roughness={0.4}
@@ -195,7 +195,7 @@ function Particles({ count }: { count: number }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#7dd3fc" size={0.045} transparent opacity={0.65} sizeAttenuation depthWrite={false} />
+      <pointsMaterial color="#d8ff63" size={0.045} transparent opacity={0.65} sizeAttenuation depthWrite={false} />
     </points>
   );
 }
@@ -240,10 +240,10 @@ export function CoreFallback() {
   return (
     <div className="flex h-full w-full items-center justify-center" aria-hidden>
       <div className="relative h-64 w-64">
-        <div className="absolute inset-0 rounded-full bg-sky-500/20 blur-3xl" />
-        <div className="absolute inset-8 rounded-full border border-sky-400/40" />
-        <div className="absolute inset-16 rounded-full border border-violet-400/40" />
-        <div className="absolute inset-24 rounded-full bg-gradient-to-br from-sky-400 to-violet-600" />
+        <div className="absolute inset-0 rounded-full bg-[#d8ff63]/15 blur-3xl" />
+        <div className="absolute inset-8 rounded-full border border-[#d8ff63]/35" />
+        <div className="absolute inset-16 rounded-full border border-white/15" />
+        <div className="absolute inset-24 rounded-full bg-[#d8ff63]" />
       </div>
     </div>
   );

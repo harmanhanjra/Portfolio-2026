@@ -5,7 +5,7 @@ import { useShell } from "./providers";
 
 export function Eyebrow({ index, code }: { index: string; code: string }) {
   return (
-    <p className="font-mono text-[11px] tracking-[0.3em] text-sky-400/90">
+    <p className="eyebrow">
       {index} — {code}
     </p>
   );
@@ -23,12 +23,12 @@ export function SectionHead({
   lede?: string;
 }) {
   const { motionOff } = useShell();
-  const anim = motionOff ? {} : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: 0.6 } };
+  const anim = motionOff ? {} : { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] as const } };
   return (
     <motion.div {...anim} className="mb-10 max-w-3xl md:mb-14">
       <Eyebrow index={index} code={code} />
-      <h2 className="font-display mt-3 text-3xl font-bold leading-tight text-white md:text-5xl">{title}</h2>
-      {lede && <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-400 md:text-base">{lede}</p>}
+      <h2 className="font-display mt-4 text-3xl font-bold leading-[1.02] tracking-[-0.04em] text-white md:text-5xl">{title}</h2>
+      {lede && <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-slate-400 md:text-base">{lede}</p>}
     </motion.div>
   );
 }
@@ -42,7 +42,7 @@ export function Reveal({ children, delay = 0, className }: { children: React.Rea
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.5, delay, ease: [0.23, 1, 0.32, 1] as const }}
     >
       {children}
     </motion.div>

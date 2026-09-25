@@ -14,19 +14,19 @@ export default function OgImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#05070d",
-          color: "#f2efe9",
+          background: "#0b1210",
+          color: "#f1eadc",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, letterSpacing: 8, color: "#38bdf8" }}>SYS.LAB // AI CORE ONLINE</div>
+        <div style={{ display: "flex", fontSize: 28, letterSpacing: 8, color: "#e2a06f" }}>AI ENGINEER // BERLIN</div>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 96, fontWeight: 800, lineHeight: 1, marginTop: 16 }}>
           <span>HARMANPREET</span>
           <span>SINGH</span>
         </div>
-        <div style={{ display: "flex", fontSize: 36, fontWeight: 600, color: "#7dd3fc", marginTop: 16 }}>AI ENGINEER</div>
-        <div style={{ display: "flex", fontSize: 26, color: "#94a3b8", marginTop: 8 }}>
-          Generative AI · Agentic Systems · Full Stack
+        <div style={{ display: "flex", fontSize: 36, fontWeight: 600, color: "#e2a06f", marginTop: 16 }}>AGENTS · RAG · FULL STACK</div>
+        <div style={{ display: "flex", fontSize: 26, color: "#b6bdb4", marginTop: 8 }}>
+          Production-minded AI systems and applications
         </div>
       </div>
     ),

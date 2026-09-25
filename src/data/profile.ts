@@ -7,7 +7,7 @@
 export const PROFILE = {
   name: "Harmanpreet Singh",
   firstName: "Harmanpreet",
-  headline: "AI Engineer building intelligent systems that actually work.",
+  headline: "AI Engineer — agents, RAG, and production-ready systems.",
   roles: [
     "AI Engineer",
     "Generative AI & LLM Systems",
@@ -15,12 +15,11 @@ export const PROFILE = {
     "AI Automation",
     "Full-Stack Developer",
   ],
-  tagline:
-    "Generative AI · LLM Systems · Agentic Workflows · Full Stack",
+  tagline: "AI Engineer · Agent Systems · RAG · Full Stack",
   summary:
-    "AI Engineer with 1.5+ years focused on Generative AI, LLM-powered systems, and agentic workflows, backed by 4+ years of full-stack software engineering. Builds production RAG pipelines, multi-agent systems, and evaluation harnesses — shipping AI products end-to-end, from architecture to deployment.",
+    "AI engineer with 1.5+ years in generative AI and 4+ years in full-stack delivery, building agent systems, RAG pipelines, and production applications.",
   availability: "Open to opportunities",
-  availabilityDetail: "Open to relocation & remote roles worldwide",
+  availabilityDetail: "Open to full-time roles in Berlin or remote across Europe",
   location: "Berlin, Germany",
   locations: ["Berlin, Germany", "Sangrur, Punjab, India"],
   email: "2000sharmanpreet@gmail.com",

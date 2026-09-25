@@ -88,5 +88,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
 export function scrollToId(id: string) {
   const el = document.querySelector(id);
-  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - 88;
+  const calm = document.body.classList.contains("recruiter") || document.body.classList.contains("motion-off");
+  window.scrollTo({ top, behavior: calm ? "auto" : "smooth" });
 }

@@ -7,6 +7,7 @@ export interface Project {
   id: string;
   name: string;
   category: string;
+  summary?: string;
   problem: string;
   whyItMatters: string;
   architecture: string[];
@@ -25,6 +26,8 @@ export const PROJECTS: Project[] = [
     id: "nexus-ai",
     name: "Nexus AI",
     category: "AI Agent Operating System",
+    summary:
+      "Five specialized agents with model routing, shared memory, streaming responses, and cited search results.",
     problem: "Teams juggle disconnected AI tools with no shared memory, routing, or grounded answers.",
     whyItMatters:
       "A single operating layer where specialized agents collaborate — with memory and cited sources — instead of isolated chatbots.",
@@ -48,6 +51,8 @@ export const PROJECTS: Project[] = [
     id: "doc-qa",
     name: "Agentic Document Q&A",
     category: "RAG · Agentic Retrieval",
+    summary:
+      "Multi-turn retrieval over financial and research documents with tool use and compact, context-aware answers.",
     problem: "Analysts drown in financial and research documents they must read line by line.",
     whyItMatters:
       "Multi-turn Q&A that retrieves, reasons with tools, and manages context — resolving most queries with zero human intervention.",
@@ -68,6 +73,8 @@ export const PROJECTS: Project[] = [
     id: "rag-eval",
     name: "RAG Evaluation & Agent Reliability Framework",
     category: "Evaluation Harness",
+    summary:
+      "A multi-axis scorecard for RAG accuracy, tool-use reliability, and failure-mode coverage across agent workflows.",
     problem: "RAG pipelines fail silently — hallucinations and tool misuse reach users undetected.",
     whyItMatters:
       "Benchmarks accuracy, tool-use reliability, and failure-mode coverage so agent systems can be trusted in production.",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Database, Globe, MemoryStick, Route, Send, User, Users, Wrench } from "lucide-react";
 import { PROFILE } from "@/data/profile";
 import { SectionHead, Reveal } from "./section";
+import { scrollToId } from "./providers";
 import { track } from "@/lib/analytics";
 
 const NEXUS_FLOW = [
@@ -36,7 +37,7 @@ function FlowDiagram({ flow, idPrefix }: { flow: typeof NEXUS_FLOW; idPrefix: st
             <button
               onClick={() => setActive(i)}
               aria-pressed={active === i}
-              className={`flex h-full w-full flex-col gap-1.5 rounded-xl border p-3.5 text-left transition ${
+               className={`flex h-full w-full flex-col gap-1.5 rounded-xl border p-3.5 text-left transition-[color,background-color,border-color] duration-200 ${
                 active === i
                   ? "border-sky-400/60 bg-sky-400/10"
                   : "border-white/10 bg-white/[0.02] hover:border-white/25"
@@ -82,13 +83,13 @@ export function CaseStudies() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("github_click", "nexus-ai")}
-                className="rounded-full bg-white px-6 py-3 text-sm font-bold text-[#05070d] transition hover:bg-slate-200"
+                 className="button-primary min-h-0 px-6 py-3 text-sm"
               >
                 VIEW SOURCE ON GITHUB
               </a>
               <button
-                onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-bold text-white transition hover:border-white/40"
+                 onClick={() => scrollToId("#contact")}
+                 className="button-secondary min-h-0 px-6 py-3 text-sm"
               >
                 ASK ME ABOUT THE ARCHITECTURE
               </button>
